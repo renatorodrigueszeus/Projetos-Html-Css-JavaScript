@@ -1,66 +1,118 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*
-{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-:root{
-    --black: #333;
-    --green: #017143;
-    --white: #fff;
-    --white2: #fff;
-    --black2: #333;
-}
-section{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--white2);
-}
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
-}
-header .logo{
-    position: relative;
-    max-width: 70px;
-}
-header ul{
-    position: relative;
+body
+{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background: #000;
 }
-header ul li{
-    list-style: none;
-    display: flex;
-    margin-left: 30px;
-}
-header ul li a{
-    display: inline-block;
-    color: var(--black);
-    font-weight: 500;
-    text-decoration: none;
-}
-.content
+.loader 
 {
     position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+.loader:hover{
+    background: #03e9f4;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
+.loader span{
+    position: absolute;
+    display: block;
+}
+.loader span:nth-child(1){
+    top: 0;
+    left: -100;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
+    height: 40px;
+    background: linear-gradient(90deg, transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+    animation-delay: 0s;
+}
+@keyframes animate1
+ {
+    0%
+    {
+        left: -100%;
+    }
+    100%
+    {
+        left: 100%;
+    }
+}
+
+.loader span:nth-child(3)
+{
+    bottom: 0;
+    left: -100;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(270deg, transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0s;
+}
+@keyframes animate1
+ {
+    0%
+    {
+        left: 100%;
+    }
+    100%
+    {
+        left: -100%;
+    }
+}
+
+.loader span:nth-child(2)
+{
+    right: 0;
+    top: -100%;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate2
+ {
+    0%
+    {
+        top: -100%;
+    }
+    100%
+    {
+        top: 100%;
+    }
+}
+
+.loader span:nth-child(4)
+{
+    left: 0;
+    top: 100%;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(0deg, transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate4
+ {
+    0%
+    {
+        top: 100%;
+    }
+    100%
+    {
+        top: -100%;
+    }
 }
